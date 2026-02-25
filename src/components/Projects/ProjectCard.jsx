@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Maximize2, ExternalLink } from 'lucide-react';
+import { Github, Maximize2, ExternalLink, Linkedin, Instagram } from 'lucide-react';
 
 const ProjectCard = ({ project, onHover, onLeave }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -116,6 +116,16 @@ const ProjectCard = ({ project, onHover, onLeave }) => {
                     {project.github && (
                         <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', transition: 'color 0.3s' }} title="GitHub" onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-main)'}>
                             <Github size={18} strokeWidth={1.5} />
+                        </a>
+                    )}
+                    {project.linkedin && (
+                        <a href={project.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', transition: 'color 0.3s' }} title="LinkedIn" onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-main)'}>
+                            <Linkedin size={18} strokeWidth={1.5} />
+                        </a>
+                    )}
+                    {project.instagram && (
+                        <a href={project.instagram} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', transition: 'color 0.3s' }} title="Instagram" onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-main)'}>
+                            <Instagram size={18} strokeWidth={1.5} />
                         </a>
                     )}
                     {project.link && (

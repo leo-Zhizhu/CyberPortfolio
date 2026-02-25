@@ -45,6 +45,10 @@ const projectOneKeywords = [
     'r14-c1', 'r18-c1', 'r11-c1', 'r3-c10'
 ];
 
+const projectSixKeywords = [
+    'r20-c1', 'r21-c6', 'r20-c9', 'r11-c1', 'r6-c6', 'r12-c10'
+];
+
 const BrickWall = ({ hoveredProjectId }) => {
     const rows = 45;
     const cols = 60;
@@ -85,7 +89,9 @@ const BrickWall = ({ hoveredProjectId }) => {
                     {Array.from({ length: cols }).map((_, c) => {
                         const id = `r${r}-c${c}`;
                         const blockData = blocks[id];
-                        const isHighlighted = hoveredProjectId === 1 && projectOneKeywords.includes(id);
+                        const isHighlighted =
+                            (hoveredProjectId === 1 && projectOneKeywords.includes(id)) ||
+                            (hoveredProjectId === 6 && projectSixKeywords.includes(id));
 
                         return <BrickBlock key={id} id={blockData.id} word={blockData.word} isHighlighted={isHighlighted} />;
                     })}

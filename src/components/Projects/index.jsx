@@ -3,15 +3,17 @@ import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import BrickWall from './BrickWall';
 import LangAlphaLogo from '../../assets/langalpha_logo.svg';
+import CUAUVLogo from '../../assets/cuauv.svg';
 
 const projects = [
     {
         id: 1,
         title: 'Ginlix AI-LangAlpha',
-        description: 'An AI-powered "vibe investing agent harness" designed to help interpret financial markets and support complex, long-term investment decisions. Unlike traditional AI finance tools that treat investing as a simple one-shot question-and-answer interaction, LangAlpha treats research as an iterative, Bayesian process where a specialized AI continually refines an investment thesis as new data arrives.',
+        description: 'An AI-powered investing agent designed to help interpret financial markets and support complex, long-term investment decisions. Unlike traditional AI finance tools that treat investing as a simple one-shot question-and-answer interaction, LangAlpha (Ginlix AI\'s v3 product) treats research as an iterative process where a specialized AI continually refines an investment strategy as new data arrives and currently provides services for 100+ users.',
         tech: ['PostgreSQL', 'Redis', 'LangGraph', 'CI/CD', 'LiteLLM', 'React.js', 'FastAPI', 'MCP', 'Agent workflow', 'Data pipeline', 'Javascript', 'HTML/CSS', 'Git', 'RESTful API', 'RAG', 'Docker', 'Cloud Deployment'],
         size: 'large',
         link: 'https://langalpha.com',
+        linkedin: 'https://www.linkedin.com/company/ginlix-ai/posts/?feedView=all',
         github: 'https://github.com/ginlix-ai/LangAlpha',
         logo: LangAlphaLogo,
         role: 'Internship',
@@ -41,10 +43,14 @@ const projects = [
     },
     {
         id: 6,
-        title: 'Interactive Web Playground',
-        description: 'An immersive 3D web experience tailored for visual storytelling. Combining seamless physics simulations with modern frontend rendering, creating a deeply engaging user journey that is both functional and performant.',
-        tech: ['React', 'Three.js'],
-        size: 'large'
+        title: 'Cornell Autonomous Underwater Vehicle',
+        description: 'Enhance vehicle performance through the intersection of machine learning and robotics control. Designed and implemented an automated data pipeline to collect and preprocess real-world pool test data for machine learning. Reduced control error by 80%, optimizing the vehicle’s robustness in varying underwater conditions.',
+        tech: ['Data pipeline', 'PID control', 'Non-linear optimization', 'Docker', 'Python', 'Git'],
+        size: 'large',
+        link: 'https://cuauv.org',
+        linkedin: 'https://www.linkedin.com/company/cornell-university-autonomous-underwater-vehicle/posts/?feedView=all',
+        instagram: 'https://www.instagram.com/cornell_auv/?hl=en',
+        logo: CUAUVLogo
     },
     {
         id: 5,
