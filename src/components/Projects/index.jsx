@@ -22,10 +22,12 @@ const projects = [
     },
     {
         id: 2,
-        title: 'Neural Engine',
-        description: 'Optimized deep learning inference server.',
-        tech: ['Python', 'PyTorch'],
-        size: 'small'
+        title: 'GroceryManager',
+        description: 'A cloud-native online grocery list management platform. Features a layered Spring Boot RESTful API with injected dependencies, PostgreSQL via AWS RDS, session-based Spring Security authentication, and containerized Docker deployment on AWS App Runner.',
+        tech: ['Java', 'Spring Boot', 'RESTful API', 'Dependency Injection', 'PostgreSQL', 'AWS', 'Docker'],
+        size: 'small',
+        github: 'https://github.com/leo-Zhizhu/GroceryManager',
+        link: 'https://jfmvpckfgd.us-east-2.awsapprunner.com/'
     },
     {
         id: 3,
