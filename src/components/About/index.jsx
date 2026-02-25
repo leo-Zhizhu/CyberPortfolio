@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TerminalSquare, Target, Users, Lightbulb } from 'lucide-react';
+import { TerminalSquare, Target, Users, Lightbulb, Github, Linkedin } from 'lucide-react';
 import PortraitStack from './PortraitStack';
 
 const About = () => {
@@ -83,18 +83,30 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    {/* Real Interactive Portraits */}
+                    {/* Real Interactive Portraits and Social Links */}
                     <motion.div
                         variants={itemVariants}
-                        style={{
-                            aspectRatio: '3/4',
-                            position: 'relative',
-                            // Offset padding to ensure the offset bottom image fits in grid cell
-                            paddingBottom: '30px',
-                            paddingRight: '30px'
-                        }}
+                        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                     >
-                        <PortraitStack />
+                        <div
+                            style={{
+                                width: '100%',
+                                aspectRatio: '3/4',
+                                position: 'relative',
+                                paddingBottom: '30px',
+                                paddingRight: '30px'
+                            }}
+                        >
+                            <PortraitStack />
+                        </div>
+                        <div style={{ display: 'flex', gap: '20px', marginTop: '1.5rem', zIndex: 10 }}>
+                            <a href="https://github.com/leo-Zhizhu" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-main)'}>
+                                <Github size={28} strokeWidth={1.5} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/zhu-zhi-506499376/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-main)'}>
+                                <Linkedin size={28} strokeWidth={1.5} />
+                            </a>
+                        </div>
                     </motion.div>
                 </motion.div>
 
