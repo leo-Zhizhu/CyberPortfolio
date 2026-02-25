@@ -31,10 +31,11 @@ const projects = [
     },
     {
         id: 3,
-        title: 'Data Pipeline',
-        description: 'Real-time ETL data processing pipeline.',
-        tech: ['Rust', 'PostgreSQL'],
-        size: 'small'
+        title: 'Pixel Social',
+        description: 'An AI-powered social platform for creating and sharing AI-generated artwork. Integrated DALL·E 3 for content generation, built a distributed search infrastructure with ElasticSearch, and developed a secure Golang backend deployed on Google App Engine with JWT-based authentication.',
+        tech: ['React.js', 'Golang', 'Google App Engine', 'ElasticSearch', 'JWT middleware'],
+        size: 'small',
+        github: 'https://github.com/leo-Zhizhu/Pixel-Social'
     },
     {
         id: 4,
