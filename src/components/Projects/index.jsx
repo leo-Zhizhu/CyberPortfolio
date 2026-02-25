@@ -39,10 +39,11 @@ const projects = [
     },
     {
         id: 4,
-        title: 'Edge Compute Node',
-        description: 'Low-latency edge worker deployed globally.',
-        tech: ['Go', 'Docker'],
-        size: 'small'
+        title: 'MiniSpotify',
+        description: 'A lightweight Android music streaming application built natively. Engineered a robust MVVM state machine with Jetpack Compose for declarative UI, alongside Hilt Dependency Injection. Features a complete ExoPlayer integration for dynamic audio streams and seamless persistent caching using Room.',
+        tech: ['Kotlin', 'Android', 'MVVM', 'Dependency Injection', 'Room', 'Retrofit'],
+        size: 'small',
+        github: 'https://github.com/leo-Zhizhu/MiniSpotify'
     },
     {
         id: 6,

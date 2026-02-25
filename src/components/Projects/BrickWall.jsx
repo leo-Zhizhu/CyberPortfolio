@@ -14,6 +14,9 @@ const keywordMap = {
     'r20-c1': 'Data pipeline',
     'r21-c6': 'PID control',
     'r20-c9': 'Non-linear optimization',
+    'r1-c8': 'Android',
+    'r4-c2': 'Retrofit',
+    'r9-c9': 'Room',
     'r14-c1': 'RESTful API',
     'r12-c1': 'Spring Boot',
     'r18-c10': 'AWS',
@@ -55,6 +58,10 @@ const projectTwoKeywords = [
 
 const projectThreeKeywords = [
     'r8-c9', 'r5-c9', 'r5-c4', 'r3-c3', 'r21-c1'
+];
+
+const projectFourKeywords = [
+    'r8-c1', 'r1-c8', 'r6-c1', 'r14-c9', 'r9-c9', 'r4-c2'
 ];
 
 const BrickWall = ({ hoveredProjectId }) => {
@@ -101,6 +108,7 @@ const BrickWall = ({ hoveredProjectId }) => {
                             (hoveredProjectId === 1 && projectOneKeywords.includes(id)) ||
                             (hoveredProjectId === 2 && projectTwoKeywords.includes(id)) ||
                             (hoveredProjectId === 3 && projectThreeKeywords.includes(id)) ||
+                            (hoveredProjectId === 4 && projectFourKeywords.includes(id)) ||
                             (hoveredProjectId === 6 && projectSixKeywords.includes(id));
 
                         return <BrickBlock key={id} id={blockData.id} word={blockData.word} isHighlighted={isHighlighted} />;
