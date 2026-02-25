@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Maximize2, ExternalLink, Linkedin, Instagram } from 'lucide-react';
 
-const ProjectCard = ({ project, onHover, onLeave }) => {
+const ProjectCard = ({ project, onHover, onLeave, styleOverride }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -21,16 +21,15 @@ const ProjectCard = ({ project, onHover, onLeave }) => {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6 }}
             style={{
-                gridColumn: project.size === 'large' ? 'span 2' : 'span 1',
-                gridRow: project.size === 'large' ? 'span 2' : 'span 1',
-                padding: project.size === 'large' ? '25px' : '20px',
+                padding: '25px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 zIndex: 10,
                 background: 'var(--bg-color)', // Important to block the brick wall
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                ...(styleOverride || {})
             }}
         >
             {project.logo && (
@@ -39,10 +38,10 @@ const ProjectCard = ({ project, onHover, onLeave }) => {
                     alt={`${project.title} logo`}
                     style={{
                         position: 'absolute',
-                        top: project.size === 'large' ? '-10%' : '-15%',
-                        left: project.size === 'large' ? '-5%' : '-10%',
-                        width: project.size === 'large' ? '60%' : '70%',
-                        height: project.size === 'large' ? '80%' : '90%',
+                        top: '-10%',
+                        left: '-5%',
+                        width: '60%',
+                        height: '80%',
                         objectFit: 'contain',
                         zIndex: 0,
                         pointerEvents: 'none',
@@ -52,11 +51,11 @@ const ProjectCard = ({ project, onHover, onLeave }) => {
                 />
             )}
 
-            <div style={{ marginBottom: project.size === 'large' ? '30px' : '15px', position: 'relative', zIndex: 2 }}>
+            <div style={{ marginBottom: '30px', position: 'relative', zIndex: 2 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                         <h3 style={{
-                            fontSize: project.size === 'large' ? '1.8rem' : '1.1rem',
+                            fontSize: '1.8rem',
                             lineHeight: 1.2,
                             fontWeight: 600
                         }}>
@@ -76,7 +75,7 @@ const ProjectCard = ({ project, onHover, onLeave }) => {
                             padding: 0
                         }}
                     >
-                        <Maximize2 strokeWidth={1.5} size={project.size === 'large' ? 24 : 20} />
+                        <Maximize2 strokeWidth={1.5} size={24} />
                     </motion.button>
                 </div>
                 {(project.role || project.duration || project.location) && (
@@ -86,16 +85,9 @@ const ProjectCard = ({ project, onHover, onLeave }) => {
                         {project.location && <span style={{ fontFamily: 'Montserrat', fontSize: '0.85rem', color: 'var(--text-muted)' }}>{project.location}</span>}
                     </div>
                 )}
-                {project.size === 'large' && (
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.5 }}>
-                        {project.description}
-                    </p>
-                )}
-                {project.size === 'small' && (
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', lineHeight: 1.4 }}>
-                        {project.description}
-                    </p>
-                )}
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.5 }}>
+                    {project.description}
+                </p>
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 'auto', position: 'relative', zIndex: 2 }}>

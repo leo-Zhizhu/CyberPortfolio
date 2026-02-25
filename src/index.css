@@ -160,16 +160,6 @@ h6 {
   pointer-events: none;
 }
 
-/* Projects Grid Layout */
-.projects-grid-layout {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(170px, auto);
-  gap: 15px;
-  grid-auto-flow: dense;
-  width: 100%;
-  max-width: 800px;
-}
 
 .minimal-panel.project-card-fx:hover {
   background-color: #fef08a !important;
@@ -196,21 +186,4 @@ h6 {
 .minimal-panel.project-card-fx:hover svg {
   stroke: #111111 !important;
   color: #111111 !important;
-}
-
-@media (max-width: 900px) {
-  .projects-grid-layout {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-grid-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .minimal-panel.project-card-fx {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-  }
 }

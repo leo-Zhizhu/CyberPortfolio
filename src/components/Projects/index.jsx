@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import BrickWall from './BrickWall';
@@ -68,6 +68,19 @@ const projects = [
 
 const Projects = () => {
     const [hoveredProjectId, setHoveredProjectId] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'ArrowLeft') {
+                setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
+            } else if (e.key === 'ArrowRight') {
+                setCurrentIndex((prev) => (prev + 1) % projects.length);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
 
     return (
         <section className="section" id="projects" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -89,16 +102,60 @@ const Projects = () => {
                     <div style={{ width: '60px', height: '2px', background: 'var(--text-main)', marginLeft: 'auto' }} />
                 </motion.div>
 
-                {/* Grid Cluster */}
-                <div className="projects-grid-layout">
-                    {projects.map((project) => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                            onHover={setHoveredProjectId}
-                            onLeave={() => setHoveredProjectId(null)}
-                        />
-                    ))}
+                {/* Carousel Cluster */}
+                <div style={{ position: 'relative', width: '100%', height: '550px', display: 'flex', justifyContent: 'center', alignItems: 'center', perspective: '1200px' }}>
+                    {projects.map((project, index) => {
+                        const n = projects.length;
+                        const leftIndex = (currentIndex - 1 + n) % n;
+                        const rightIndex = (currentIndex + 1) % n;
+
+                        let isCenter = index === currentIndex;
+                        let isLeft = index === leftIndex;
+                        let isRight = index === rightIndex;
+
+                        let positionStyle = { x: '0%', scale: 0.6, opacity: 0, zIndex: -1 };
+                        let isVisible = false;
+
+                        if (isCenter) {
+                            positionStyle = { x: '0%', scale: 1, opacity: 1, zIndex: 10 };
+                            isVisible = true;
+                        } else if (isLeft) {
+                            positionStyle = { x: '-65%', scale: 0.85, opacity: 0.4, zIndex: 1 };
+                            isVisible = true;
+                        } else if (isRight) {
+                            positionStyle = { x: '65%', scale: 0.85, opacity: 0.4, zIndex: 1 };
+                            isVisible = true;
+                        }
+
+                        return (
+                            <motion.div
+                                key={project.id}
+                                animate={positionStyle}
+                                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                                style={{
+                                    position: 'absolute',
+                                    width: '100%',
+                                    maxWidth: '650px',
+                                    height: '90%',
+                                    pointerEvents: isVisible ? 'auto' : 'none',
+                                    cursor: isCenter ? 'default' : 'pointer',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }}
+                                onClick={() => {
+                                    if (!isCenter) setCurrentIndex(index);
+                                }}
+                            >
+                                <ProjectCard
+                                    project={project}
+                                    onHover={isCenter ? setHoveredProjectId : undefined}
+                                    onLeave={isCenter ? () => setHoveredProjectId(null) : undefined}
+                                    styleOverride={{ width: '100%', height: '100%', pointerEvents: isCenter ? 'auto' : 'none' }}
+                                />
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>
