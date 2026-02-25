@@ -21,6 +21,17 @@ const projects = [
         location: 'Remote'
     },
     {
+        id: 6,
+        title: 'Cornell Autonomous Underwater Vehicle',
+        description: 'Enhance vehicle performance through the intersection of machine learning and robotics control. Designed and implemented an automated data pipeline to collect and preprocess real-world pool test data for machine learning. Reduced control error by 80%, optimizing the vehicle’s robustness in varying underwater conditions.',
+        tech: ['Data pipeline', 'PID control', 'Non-linear optimization', 'Docker', 'Python', 'Git'],
+        size: 'large',
+        link: 'https://cuauv.org',
+        linkedin: 'https://www.linkedin.com/company/cornell-university-autonomous-underwater-vehicle/posts/?feedView=all',
+        instagram: 'https://www.instagram.com/cornell_auv/?hl=en',
+        logo: CUAUVLogo
+    },
+    {
         id: 2,
         title: 'GroceryManager',
         description: 'A cloud-native online grocery list management platform. Features a layered Spring Boot RESTful API with injected dependencies, PostgreSQL via AWS RDS, session-based Spring Security authentication, and containerized Docker deployment on AWS App Runner.',
@@ -46,17 +57,6 @@ const projects = [
         github: 'https://github.com/leo-Zhizhu/MiniSpotify'
     },
     {
-        id: 6,
-        title: 'Cornell Autonomous Underwater Vehicle',
-        description: 'Enhance vehicle performance through the intersection of machine learning and robotics control. Designed and implemented an automated data pipeline to collect and preprocess real-world pool test data for machine learning. Reduced control error by 80%, optimizing the vehicle’s robustness in varying underwater conditions.',
-        tech: ['Data pipeline', 'PID control', 'Non-linear optimization', 'Docker', 'Python', 'Git'],
-        size: 'large',
-        link: 'https://cuauv.org',
-        linkedin: 'https://www.linkedin.com/company/cornell-university-autonomous-underwater-vehicle/posts/?feedView=all',
-        instagram: 'https://www.instagram.com/cornell_auv/?hl=en',
-        logo: CUAUVLogo
-    },
-    {
         id: 5,
         title: 'PaperChat',
         description: 'A full-stack AI chatbot platform. It features a RAG pipeline utilizing LangChain, GPT, and external web searches via MCP to produce context-aware, tool-verified responses with reduced hallucination risk. The system employs a Node.js/Express backend coupled with a responsive React and Ant Design interface.',
@@ -69,6 +69,14 @@ const projects = [
 const Projects = () => {
     const [hoveredProjectId, setHoveredProjectId] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        setHoveredProjectId(null);
+        setIsAnimating(true);
+        const timer = setTimeout(() => setIsAnimating(false), 700);
+        return () => clearTimeout(timer);
+    }, [currentIndex]);
 
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -155,9 +163,9 @@ const Projects = () => {
                             >
                                 <ProjectCard
                                     project={project}
-                                    onHover={isCenter ? setHoveredProjectId : undefined}
-                                    onLeave={isCenter ? () => setHoveredProjectId(null) : undefined}
-                                    styleOverride={{ width: '100%', height: '100%', pointerEvents: isCenter ? 'auto' : 'none' }}
+                                    onHover={(!isAnimating && isCenter) ? setHoveredProjectId : undefined}
+                                    onLeave={(!isAnimating && isCenter) ? () => setHoveredProjectId(null) : undefined}
+                                    styleOverride={{ width: '100%', height: '100%', pointerEvents: (isCenter && !isAnimating) ? 'auto' : 'none' }}
                                 />
                             </motion.div>
                         );
