@@ -113,25 +113,30 @@ const Projects = () => {
                         let isLeft = index === leftIndex;
                         let isRight = index === rightIndex;
 
-                        let positionStyle = { x: '0%', scale: 0.6, opacity: 0, zIndex: -1 };
+                        let positionStyle = { x: '0%', rotateY: '0deg', scale: 0.6, opacity: 0, zIndex: -1 };
                         let isVisible = false;
 
                         if (isCenter) {
-                            positionStyle = { x: '0%', scale: 1, opacity: 1, zIndex: 10 };
+                            positionStyle = { x: '0%', rotateY: '0deg', scale: 1, opacity: 1, zIndex: 10 };
                             isVisible = true;
                         } else if (isLeft) {
-                            positionStyle = { x: '-65%', scale: 0.85, opacity: 0.4, zIndex: 1 };
+                            positionStyle = { x: '-25%', rotateY: '20deg', scale: 0.85, opacity: 1, zIndex: 5 };
                             isVisible = true;
                         } else if (isRight) {
-                            positionStyle = { x: '65%', scale: 0.85, opacity: 0.4, zIndex: 1 };
+                            positionStyle = { x: '25%', rotateY: '-20deg', scale: 0.85, opacity: 1, zIndex: 5 };
                             isVisible = true;
                         }
+
+                        // Add a slight box shadow to distinguish overlapping cards
+                        const filterStyle = isCenter
+                            ? 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))'
+                            : 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))';
 
                         return (
                             <motion.div
                                 key={project.id}
                                 animate={positionStyle}
-                                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                                transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
                                 style={{
                                     position: 'absolute',
                                     width: '100%',
@@ -141,7 +146,8 @@ const Projects = () => {
                                     cursor: isCenter ? 'default' : 'pointer',
                                     display: 'flex',
                                     justifyContent: 'center',
-                                    alignItems: 'center'
+                                    alignItems: 'center',
+                                    filter: filterStyle
                                 }}
                                 onClick={() => {
                                     if (!isCenter) setCurrentIndex(index);
