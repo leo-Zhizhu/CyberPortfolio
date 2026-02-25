@@ -58,10 +58,11 @@ const projects = [
     },
     {
         id: 5,
-        title: 'Cloud Orchestrator',
-        description: 'Infrastructure management and auto-scaling tool.',
-        tech: ['C++', 'K8s'],
-        size: 'small'
+        title: 'PaperChat',
+        description: 'A full-stack AI chatbot platform. It features a RAG pipeline utilizing LangChain, GPT, and external web searches via MCP to produce context-aware, tool-verified responses with reduced hallucination risk. The system employs a Node.js/Express backend coupled with a responsive React and Ant Design interface.',
+        tech: ['RAG', 'LangChain', 'MCP', 'Node.js', 'Express.js', 'React.js', 'Ant Design'],
+        size: 'small',
+        github: 'https://github.com/leo-Zhizhu/PaperChat'
     }
 ];
 
