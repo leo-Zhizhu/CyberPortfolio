@@ -10,7 +10,7 @@ const HeroSection = () => {
             flexDirection: 'column',
             justifyContent: 'center',
             position: 'relative',
-            marginTop: '2rem'
+            marginTop: '0'
         }}>
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -173,8 +173,8 @@ const HeroSection = () => {
                     color: 'var(--text-muted)'
                 }}
             >
-                <span style={{ fontSize: '0.8rem', letterSpacing: '0.15em', marginBottom: '8px', opacity: 0.6 }}>SCROLL</span>
-                <ChevronDown size={20} style={{ opacity: 0.6 }} />
+                <span style={{ fontSize: '0.9rem', letterSpacing: '0.2em', marginBottom: '8px', opacity: 0.8, color: 'var(--accent-gold)' }}>SCROLL</span>
+                <ChevronDown size={32} style={{ opacity: 0.8, color: 'var(--accent-gold)' }} />
             </motion.div>
         </section>
     );

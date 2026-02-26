@@ -12,7 +12,7 @@ const LangAlphaDetail = () => {
     }, []);
 
     return (
-        <div style={{ minHeight: '100vh', padding: '60px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ minHeight: '100vh', padding: '30px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ width: '100%', maxWidth: '1200px' }}>
                 <motion.button
                     initial={{ opacity: 0, x: -20 }}
