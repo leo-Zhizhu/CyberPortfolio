@@ -45,7 +45,7 @@ const keywordMap = {
 const projectOneKeywords = [
     'r2-c1', 'r5-c2', 'r3-c4', 'r2-c7', 'r4-c9', 'r8-c9', 'r10-c9',
     'r11-c10', 'r16-c2', 'r20-c1', 'r7-c1', 'r9-c2', 'r12-c10',
-    'r14-c1', 'r18-c1', 'r11-c1', 'r3-c10'
+    'r14-c1', 'r18-c1', 'r11-c1', 'r3-c10', 'r6-c6'
 ];
 
 const projectSixKeywords = [

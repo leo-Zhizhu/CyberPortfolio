@@ -10,13 +10,13 @@ const projects = [
         id: 1,
         title: 'Ginlix AI-LangAlpha',
         description: 'An AI-powered investing agent designed to help interpret financial markets and support complex, long-term investment decisions. Unlike traditional AI finance tools that treat investing as a simple one-shot question-and-answer interaction, LangAlpha (Ginlix AI\'s v3 product) treats research as an iterative process where a specialized AI continually refines an investment strategy as new data arrives and currently provides services for 100+ users.',
-        tech: ['PostgreSQL', 'Redis', 'LangGraph', 'CI/CD', 'LiteLLM', 'React.js', 'FastAPI', 'MCP', 'Agent workflow', 'Data pipeline', 'Javascript', 'HTML/CSS', 'Git', 'RESTful API', 'RAG', 'Docker', 'Cloud Deployment'],
+        tech: ['PostgreSQL', 'Redis', 'LangGraph', 'CI/CD', 'LiteLLM', 'React.js', 'FastAPI', 'MCP', 'Agent workflow', 'Data pipeline', 'Javascript', 'HTML/CSS', 'Git', 'RESTful API', 'RAG', 'Docker', 'Cloud Deployment', 'Python'],
         size: 'large',
         link: 'https://langalpha.com',
         linkedin: 'https://www.linkedin.com/company/ginlix-ai/posts/?feedView=all',
         github: 'https://github.com/ginlix-ai/LangAlpha',
         logo: LangAlphaLogo,
-        role: 'Internship',
+        role: 'Full Stack Software Engineer',
         duration: 'December 2025 - Present',
         location: 'Remote'
     },
@@ -29,7 +29,10 @@ const projects = [
         link: 'https://cuauv.org',
         linkedin: 'https://www.linkedin.com/company/cornell-university-autonomous-underwater-vehicle/posts/?feedView=all',
         instagram: 'https://www.instagram.com/cornell_auv/?hl=en',
-        logo: CUAUVLogo
+        logo: CUAUVLogo,
+        role: 'Software Team Member',
+        duration: 'October 2025 - Present',
+        location: 'Ithaca, NY'
     },
     {
         id: 2,
@@ -38,7 +41,8 @@ const projects = [
         tech: ['Java', 'Spring Boot', 'RESTful API', 'Dependency Injection', 'PostgreSQL', 'AWS', 'Docker'],
         size: 'small',
         github: 'https://github.com/leo-Zhizhu/GroceryManager',
-        link: 'https://jfmvpckfgd.us-east-2.awsapprunner.com/'
+        link: 'https://jfmvpckfgd.us-east-2.awsapprunner.com/',
+        role: 'Solo Project'
     },
     {
         id: 3,
@@ -46,7 +50,8 @@ const projects = [
         description: 'An AI-powered social platform for creating and sharing AI-generated artwork. Integrated DALL·E 3 for content generation, built a distributed search infrastructure with ElasticSearch, and developed a secure Golang backend deployed on Google App Engine with JWT-based authentication.',
         tech: ['React.js', 'Golang', 'Google App Engine', 'ElasticSearch', 'JWT middleware'],
         size: 'small',
-        github: 'https://github.com/leo-Zhizhu/Pixel-Social'
+        github: 'https://github.com/leo-Zhizhu/Pixel-Social',
+        role: 'Solo Project'
     },
     {
         id: 4,
@@ -54,7 +59,8 @@ const projects = [
         description: 'A lightweight Android music streaming application built natively. Engineered a robust MVVM state machine with Jetpack Compose for declarative UI, alongside Hilt Dependency Injection. Features a complete ExoPlayer integration for dynamic audio streams and seamless persistent caching using Room.',
         tech: ['Kotlin', 'Android', 'MVVM', 'Dependency Injection', 'Room', 'Retrofit'],
         size: 'small',
-        github: 'https://github.com/leo-Zhizhu/MiniSpotify'
+        github: 'https://github.com/leo-Zhizhu/MiniSpotify',
+        role: 'Solo Project'
     },
     {
         id: 5,
@@ -62,7 +68,8 @@ const projects = [
         description: 'A full-stack AI chatbot platform. It features a RAG pipeline utilizing LangChain, GPT, and external web searches via MCP to produce context-aware, tool-verified responses with reduced hallucination risk. The system employs a Node.js/Express backend coupled with a responsive React and Ant Design interface.',
         tech: ['RAG', 'LangChain', 'MCP', 'Node.js', 'Express.js', 'React.js', 'Ant Design'],
         size: 'small',
-        github: 'https://github.com/leo-Zhizhu/PaperChat'
+        github: 'https://github.com/leo-Zhizhu/PaperChat',
+        role: 'Solo Project'
     }
 ];
 
