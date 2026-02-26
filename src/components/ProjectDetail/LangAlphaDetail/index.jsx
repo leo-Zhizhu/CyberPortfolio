@@ -12,7 +12,7 @@ const LangAlphaDetail = () => {
     }, []);
 
     return (
-        <div style={{ minHeight: '100vh', padding: '100px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ minHeight: '100vh', padding: '60px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ width: '100%', maxWidth: '1200px' }}>
                 <motion.button
                     initial={{ opacity: 0, x: -20 }}
@@ -28,7 +28,7 @@ const LangAlphaDetail = () => {
                         padding: '10px 20px',
                         borderRadius: '25px',
                         cursor: 'pointer',
-                        marginBottom: '40px',
+                        marginBottom: '10px',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '10px'

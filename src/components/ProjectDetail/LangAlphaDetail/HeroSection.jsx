@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PlayCircle, Github, ExternalLink, ShieldCheck, Activity, Database, GitBranch } from 'lucide-react';
+import { PlayCircle, Github, ExternalLink, ShieldCheck, Activity, Database, GitBranch, ChevronDown } from 'lucide-react';
 
 const HeroSection = () => {
     return (
@@ -156,6 +156,25 @@ const HeroSection = () => {
                         Public Website
                     </motion.a>
                 </div>
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: [0, 10, 0] }}
+                transition={{ delay: 1.2, duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                    position: 'absolute',
+                    bottom: '-2rem',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    color: 'var(--text-muted)'
+                }}
+            >
+                <span style={{ fontSize: '0.8rem', letterSpacing: '0.15em', marginBottom: '8px', opacity: 0.6 }}>SCROLL</span>
+                <ChevronDown size={20} style={{ opacity: 0.6 }} />
             </motion.div>
         </section>
     );

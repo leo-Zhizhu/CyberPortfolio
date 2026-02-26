@@ -22,7 +22,7 @@ const ProjectDetail = () => {
     }, [projectTitle]);
 
     return (
-        <div style={{ minHeight: '100vh', padding: '100px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ minHeight: '100vh', padding: '60px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ const ProjectDetail = () => {
                         padding: '10px 20px',
                         borderRadius: '25px',
                         cursor: 'pointer',
-                        marginBottom: '40px',
+                        marginBottom: '20px',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '10px'
