@@ -99,13 +99,37 @@ const About = () => {
                         >
                             <PortraitStack />
                         </div>
-                        <div style={{ display: 'flex', gap: '20px', marginTop: '1.5rem', zIndex: 10 }}>
-                            <a href="https://github.com/leo-Zhizhu" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-main)'}>
-                                <Github size={28} strokeWidth={1.5} />
-                            </a>
-                            <a href="https://www.linkedin.com/in/zhu-zhi-506499376/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-main)'}>
-                                <Linkedin size={28} strokeWidth={1.5} />
-                            </a>
+                        <div style={{
+                            display: 'flex',
+                            gap: '30px',
+                            marginTop: '2.5rem',
+                            padding: '15px 40px',
+                            borderRadius: '50px',
+                            background: 'var(--bg-alt)',
+                            border: '1px solid rgba(255,255,255,0.05)',
+                            boxShadow: '0 8px 30px rgba(0,0,0,0.1)',
+                            zIndex: 10
+                        }}>
+                            <motion.a
+                                href="https://github.com/leo-Zhizhu"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'var(--text-main)', display: 'flex', alignItems: 'center' }}
+                                whileHover={{ scale: 1.2, color: 'var(--accent-gold)' }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <Github size={36} strokeWidth={1.5} />
+                            </motion.a>
+                            <motion.a
+                                href="https://www.linkedin.com/in/zhu-zhi-506499376/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'var(--text-main)', display: 'flex', alignItems: 'center' }}
+                                whileHover={{ scale: 1.2, color: 'var(--accent-gold)' }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <Linkedin size={36} strokeWidth={1.5} />
+                            </motion.a>
                         </div>
                     </motion.div>
                 </motion.div>
