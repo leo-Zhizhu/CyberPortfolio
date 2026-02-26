@@ -5,7 +5,7 @@ import BrickWall from './BrickWall';
 import LangAlphaLogo from '../../assets/langalpha_logo.svg';
 import CUAUVLogo from '../../assets/cuauv.svg';
 
-const projects = [
+export const projects = [
     {
         id: 1,
         title: 'Ginlix AI-LangAlpha',
@@ -75,10 +75,13 @@ const projects = [
 
 const Projects = () => {
     const [hoveredProjectId, setHoveredProjectId] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(() => {
+        return Number(sessionStorage.getItem('portfolio_carousel_idx')) || 0;
+    });
     const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
+        sessionStorage.setItem('portfolio_carousel_idx', currentIndex);
         setHoveredProjectId(null);
         setIsAnimating(true);
         const timer = setTimeout(() => setIsAnimating(false), 700);

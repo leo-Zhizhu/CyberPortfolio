@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Maximize2, ExternalLink, Linkedin, Instagram } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectCard = ({ project, onHover, onLeave, styleOverride }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <motion.div
@@ -63,7 +65,10 @@ const ProjectCard = ({ project, onHover, onLeave, styleOverride }) => {
                         </h3>
                     </div>
                     <motion.button
-                        onClick={() => console.log(`Open detailed page for ${project.title}`)}
+                        onClick={() => {
+                            const safeTitle = project.title.replace(/\s+/g, '-');
+                            navigate(`/zhuzhi/${safeTitle}`);
+                        }}
                         whileHover={{ scale: 1.1, color: 'var(--accent-gold)' }}
                         style={{
                             color: 'var(--text-main)',
