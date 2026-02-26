@@ -16,7 +16,7 @@ export const projects = [
         linkedin: 'https://www.linkedin.com/company/ginlix-ai/posts/?feedView=all',
         github: 'https://github.com/ginlix-ai/LangAlpha',
         logo: LangAlphaLogo,
-        role: 'Full Stack Software Engineer',
+        role: 'Full Stack Software Engineer & Product Manager',
         duration: 'December 2025 - Present',
         location: 'Remote'
     },
@@ -30,7 +30,7 @@ export const projects = [
         linkedin: 'https://www.linkedin.com/company/cornell-university-autonomous-underwater-vehicle/posts/?feedView=all',
         instagram: 'https://www.instagram.com/cornell_auv/?hl=en',
         logo: CUAUVLogo,
-        role: 'Software Team Member',
+        role: 'Software Engineer & Control Specialist',
         duration: 'October 2025 - Present',
         location: 'Ithaca, NY'
     },

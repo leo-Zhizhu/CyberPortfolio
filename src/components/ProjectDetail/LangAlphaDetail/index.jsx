@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import HeroSection from './HeroSection';
 import ArchitectureSection from './ArchitectureSection';
+import DirectoryTree from './DirectoryTree';
+import WorkflowDiagrams from './WorkflowDiagrams';
 
 const LangAlphaDetail = () => {
     const navigate = useNavigate();
@@ -38,6 +40,8 @@ const LangAlphaDetail = () => {
                 </motion.button>
 
                 <HeroSection />
+                <DirectoryTree />
+                <WorkflowDiagrams />
                 <ArchitectureSection />
             </div>
         </div>
