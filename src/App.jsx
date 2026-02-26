@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -7,15 +7,33 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ProjectDetail from './components/ProjectDetail';
 
-const Home = () => (
-  <>
-    <Navbar />
-    <Hero />
-    <About />
-    <Projects />
-    <Contact />
-  </>
-);
+const Home = () => {
+  useEffect(() => {
+    const savedScrollPos = sessionStorage.getItem('portfolio_scroll_pos');
+    if (savedScrollPos) {
+      setTimeout(() => {
+        window.scrollTo({ top: parseInt(savedScrollPos, 10), behavior: 'auto' });
+      }, 50);
+    }
+
+    const handleScroll = () => {
+      sessionStorage.setItem('portfolio_scroll_pos', window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+    </>
+  );
+};
 
 function App() {
   return (
