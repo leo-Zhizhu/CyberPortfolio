@@ -2,18 +2,24 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '../Projects';
 import { motion } from 'framer-motion';
+import LangAlphaDetail from './LangAlphaDetail';
 
 const ProjectDetail = () => {
     const { projectTitle } = useParams();
     const navigate = useNavigate();
 
-    // Find project based on title
-    const formattedTitle = projectTitle.replace(/-/g, ' ');
+    // Route LangAlpha to its custom module immediately
+    if (projectTitle === 'Ginlix-AI-LangAlpha') {
+        return <LangAlphaDetail />;
+    }
+
+    // Generic fallback for other projects
+    const formattedTitle = projectTitle ? projectTitle.replace(/-/g, ' ') : '';
     const project = projects.find(p => p.title === formattedTitle) || projects[0];
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [projectTitle]);
 
     return (
         <div style={{ minHeight: '100vh', padding: '100px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
