@@ -15,7 +15,7 @@ const workflows = [
         ],
         steps: [
             { id: 1, activeNodes: ['user', 'agent'], text: '"Compare AAPL and MSFT P/E margins over 5 years"', from: 'user', to: 'agent' },
-            { id: 2, activeNodes: ['agent'], text: 'Main Agent computes execution strategy to prevent token bloat.', from: 'agent', to: 'agent' },
+            { id: 2, activeNodes: ['agent'], text: 'Main Agent computes execution strategy to prevent token waste.', from: 'agent', to: 'agent' },
             { id: 3, activeNodes: ['agent', 'sandbox'], text: 'Generates Python code targeting the fundamentals MCP inside secure cloud execution environment.', from: 'agent', to: 'sandbox' },
             { id: 4, activeNodes: ['sandbox', 'fmp'], text: 'Connects to Remote Datastore, runs local analytics and charting calculations.', from: 'sandbox', to: 'fmp' },
             { id: 5, activeNodes: ['sandbox', 'agent'], text: 'Sandbox returns 5-year aggregate analysis & generated physical chart URL to Orchestrator.', from: 'sandbox', to: 'agent' },
@@ -25,7 +25,7 @@ const workflows = [
     {
         id: 'swarm',
         title: 'Subagent Swarm Execution',
-        description: 'To protect the main agent\'s context window during extended research tasks, the application spins off background operations.',
+        description: 'To protect the main agent\'s context window during extended research tasks, the application assigns background operations to subagents.',
         nodes: [
             { id: 'gateway', label: 'FastAPI Gateway', icon: <Server size={32} /> },
             { id: 'main_agent', label: 'Orchestrator Agent', icon: <Cpu size={32} /> },
@@ -35,16 +35,16 @@ const workflows = [
         steps: [
             { id: 1, activeNodes: ['gateway', 'main_agent'], text: 'Complex/Long Task Requested. Evaluates latency requirement.', from: 'gateway', to: 'main_agent' },
             { id: 2, activeNodes: ['main_agent', 'task_tool'], text: 'Offloads research context to asynchronous Task Tool, unblocking user thread.', from: 'main_agent', to: 'task_tool' },
-            { id: 3, activeNodes: ['task_tool', 'swarm'], text: 'Spins up individual background models reading massive proxy files inside parallel sandboxes.', from: 'task_tool', to: 'swarm' },
+            { id: 3, activeNodes: ['task_tool', 'swarm'], text: 'Calling up individual background models to read massive proxy files inside parallel sandboxes.', from: 'task_tool', to: 'swarm' },
             { id: 4, activeNodes: ['swarm', 'gateway'], text: 'Subagents continuously push filesystem syncs & updates via SSE directly to Gateway.', from: 'swarm', to: 'gateway' },
             { id: 5, activeNodes: ['swarm', 'task_tool'], text: 'Consolidates conclusions back to memory when finished.', from: 'swarm', to: 'task_tool' },
-            { id: 6, activeNodes: ['task_tool', 'main_agent'], text: 'Resolves task payload; alerting Orchestrator that research is completed.', from: 'task_tool', to: 'main_agent' }
+            { id: 6, activeNodes: ['task_tool', 'main_agent'], text: 'Resolves task payload and alerts Orchestrator that research is completed.', from: 'task_tool', to: 'main_agent' }
         ]
     },
     {
         id: 'streaming',
         title: 'Streaming & Reconnection Architecture',
-        description: 'Highly resilient Server-Sent Event pattern required for massive computational hopping avoiding HTTP bottlenecks.',
+        description: 'Highly robust Server-Sent Event pattern required for massive computational hopping to avoid HTTP bottlenecks.',
         nodes: [
             { id: 'ui', label: 'React Client', icon: <Laptop size={32} /> },
             { id: 'gateway', label: 'FastAPI Backend', icon: <Server size={32} /> },

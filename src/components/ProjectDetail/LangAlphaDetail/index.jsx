@@ -5,6 +5,8 @@ import HeroSection from './HeroSection';
 import ArchitectureSection from './ArchitectureSection';
 import DirectoryTree from './DirectoryTree';
 import WorkflowDiagrams from './WorkflowDiagrams';
+import QASection from './QASection';
+import ImageGallery from './ImageGallery';
 
 const LangAlphaDetail = () => {
     const navigate = useNavigate();
@@ -40,9 +42,11 @@ const LangAlphaDetail = () => {
                 </motion.button>
 
                 <HeroSection />
+                <ImageGallery />
                 <DirectoryTree />
                 <WorkflowDiagrams />
                 <ArchitectureSection />
+                <QASection />
             </div>
         </div>
     );
