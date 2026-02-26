@@ -29,7 +29,7 @@ const ProjectDetail = () => {
                 style={{ width: '100%', maxWidth: '800px' }}
             >
                 <button
-                    onClick={() => navigate('/zhuzhi')}
+                    onClick={() => navigate('/zhuzhi#projects')}
                     style={{
                         background: 'transparent',
                         border: '1px solid var(--accent-gold)',

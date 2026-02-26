@@ -18,7 +18,7 @@ const LangAlphaDetail = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
-                    onClick={() => navigate('/zhuzhi')}
+                    onClick={() => navigate('/zhuzhi#projects')}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     style={{
