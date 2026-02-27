@@ -16,7 +16,17 @@ const LangAlphaDetail = () => {
     }, []);
 
     return (
-        <div style={{ minHeight: '100vh', padding: '30px 20px', background: 'var(--bg-color)', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{
+            minHeight: '100vh',
+            padding: '30px 20px',
+            backgroundColor: 'rgb(245, 242, 233)',
+            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px',
+            color: 'var(--text-main)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }}>
             <div style={{ width: '100%', maxWidth: '1200px' }}>
                 <motion.button
                     initial={{ opacity: 0, x: -20 }}
