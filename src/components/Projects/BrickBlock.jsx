@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const BrickBlock = ({ id, word, isHighlighted, style = {} }) => {
     return (
@@ -37,4 +37,4 @@ const BrickBlock = ({ id, word, isHighlighted, style = {} }) => {
     );
 };
 
-export default BrickBlock;
+export default memo(BrickBlock);

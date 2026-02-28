@@ -69,11 +69,11 @@ const projectFiveKeywords = [
 ];
 
 const BrickWall = ({ hoveredProjectId }) => {
-    const rows = 45;
-    const cols = 60;
+    const rows = 25;
+    const cols = 20;
 
     // Use state so we can mutate specific blocks by ID later if needed.
-    const [blocks, setBlocks] = useState(() => {
+    const [blocks] = useState(() => {
         const initialBlocks = {};
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
@@ -124,4 +124,4 @@ const BrickWall = ({ hoveredProjectId }) => {
     );
 };
 
-export default BrickWall;
+export default React.memo(BrickWall);
