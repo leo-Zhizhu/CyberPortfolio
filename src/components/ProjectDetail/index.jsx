@@ -2,18 +2,39 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '../Projects';
 import { motion } from 'framer-motion';
+
 import LangAlphaDetail from './LangAlphaDetail';
+import CUAUVDetail from './CUAUVDetail';
+import GroceryManagerDetail from './GroceryManagerDetail';
+import PixelSocialDetail from './PixelSocialDetail';
+import MiniSpotifyDetail from './MiniSpotifyDetail';
+import PaperChatDetail from './PaperChatDetail';
 
 const ProjectDetail = () => {
     const { projectTitle } = useParams();
     const navigate = useNavigate();
 
-    // Route LangAlpha to its custom module immediately
+    // Map URL param to specific custom detail pages
     if (projectTitle === 'Ginlix-AI-LangAlpha') {
         return <LangAlphaDetail />;
     }
+    if (projectTitle === 'Cornell-Autonomous-Underwater-Vehicle' || projectTitle === 'CUAUV') {
+        return <CUAUVDetail />;
+    }
+    if (projectTitle === 'GroceryManager') {
+        return <GroceryManagerDetail />;
+    }
+    if (projectTitle === 'Pixel-Social') {
+        return <PixelSocialDetail />;
+    }
+    if (projectTitle === 'MiniSpotify') {
+        return <MiniSpotifyDetail />;
+    }
+    if (projectTitle === 'PaperChat') {
+        return <PaperChatDetail />;
+    }
 
-    // Generic fallback for other projects
+    // Generic fallback for any other unexpected project (or if we don't have a custom page yet)
     const formattedTitle = projectTitle ? projectTitle.replace(/-/g, ' ') : '';
     const project = projects.find(p => p.title === formattedTitle) || projects[0];
 
