@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { ReactLenis } from 'lenis/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -36,13 +37,15 @@ const Home = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/zhuzhi" replace />} />
-        <Route path="/zhuzhi" element={<Home />} />
-        <Route path="/zhuzhi/:projectTitle" element={<ProjectDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to="/zhuzhi" replace />} />
+          <Route path="/zhuzhi" element={<Home />} />
+          <Route path="/zhuzhi/:projectTitle" element={<ProjectDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </ReactLenis>
   );
 }
 
